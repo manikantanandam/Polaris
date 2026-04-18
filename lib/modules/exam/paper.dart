@@ -1,13 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:polaris/modules/subject/subject_snapshot.dart';
+import 'package:polaris/modules/subject/model/subject_snapshot.dart';
 
 part 'paper.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class Paper {
   // id is kept in the model for easy access but excluded from JSON/DB body
-  @JsonKey(includeToJson: false, includeFromJson: false)
   String id;
 
   String title; // e.g., "Paper-I: General Studies"
